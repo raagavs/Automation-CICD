@@ -32,6 +32,14 @@ public class BaseTest {
     public WebDriver driver;
     public LandingPage lp1;
 
+    @BeforeMethod(alwaysRun = true)
+    public LandingPage launchApplication() throws IOException {
+        driver = initializeDriver();
+        lp1 = new LandingPage(driver);
+        lp1.goTo();
+        return lp1;
+    }
+
     public WebDriver initializeDriver() throws IOException {
 
         // properties class - to read .propertirs extensions file which is a global
@@ -72,19 +80,6 @@ public class BaseTest {
         return driver;
     }
 
-    @BeforeMethod(alwaysRun = true)
-    public LandingPage launchApplication() throws IOException {
-        driver = initializeDriver();
-        lp1 = new LandingPage(driver);
-        lp1.goTo();
-        return lp1;
-    }
-
-    @AfterMethod(alwaysRun = true)
-    public void tearDown() {
-        driver.close();
-    }
-
     public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
@@ -108,4 +103,10 @@ public class BaseTest {
         return data;// data inlcludes list of HashMaps
 
     }
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        driver.close();
+    }
+
 }
