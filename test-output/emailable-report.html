@@ -9,24 +9,17 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Submit Order</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">15,642</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">Error Validations</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">33,023</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">4</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">48,665</th><th colspan="2"></th></tr>
+<tr><td><a href="#t0">Error Validations</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">23,195</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Submit Order</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">31,721</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">5</th><th class="num">0</th><th class="num">0</th><th class="num">0</th><th class="num">54,916</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Submit Order &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder</td><td><a href="#m0">orderHistoryTest</a></td><td rowspan="1">1775982961319</td><td rowspan="1">1083</td></tr><tr class="passedeven"><td><a href="#m1">submitOrder</a></td><td rowspan="2">1775982949763</td><td rowspan="2">3903</td></tr><tr class="passedeven"><td><a href="#m2">submitOrder</a></td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">Error Validations &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">SeleniumFrameworkDesign.tests.ErrorValidationsTest</td><td><a href="#m3">ProductErrorValidation</a></td><td rowspan="1">1775982951965</td><td rowspan="1">27536</td></tr><tr><th colspan="4">Error Validations &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">SeleniumFrameworkDesign.tests.ErrorValidationsTest</td><td><a href="#m4">LoginErrorValidation</a></td><td rowspan="1">1775982949766</td><td rowspan="1">589</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Error Validations &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">SeleniumFrameworkDesign.tests.ErrorValidationsTest</td><td><a href="#m0">LoginErrorValidation</a></td><td rowspan="1">1777385297602</td><td rowspan="1">531</td></tr><tr class="passedeven"><td><a href="#m1">ProductErrorValidation</a></td><td rowspan="1">1777385301321</td><td rowspan="1">16380</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Submit Order &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder</td><td><a href="#m2">orderHistoryTest</a></td><td rowspan="1">1777385325337</td><td rowspan="1">936</td></tr><tr class="passedeven"><td><a href="#m3">submitOrder</a></td><td rowspan="2">1777385298934</td><td rowspan="2">4429</td></tr><tr class="passedeven"><td><a href="#m4">submitOrder</a></td></tr></tbody>
 </table>
-<h2>Submit Order</h2><h3 id="m0">SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder#orderHistoryTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder#submitOrder</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=Raagav@747, product=ZARA COAT 3, email=BlackICE@gmail.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder#submitOrder</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=Raagav@727, product=ADIDAS ORIGINAL, email=Sellares27@gmail.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Error Validations</h2><h3 id="m3">SeleniumFrameworkDesign.tests.ErrorValidationsTest#ProductErrorValidation</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at SeleniumFrameworkDesign.tests.ErrorValidationsTest.ProductErrorValidation(ErrorValidationsTest.java:32)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 19 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">SeleniumFrameworkDesign.tests.ErrorValidationsTest#LoginErrorValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Error Validations</h2><h3 id="m0">SeleniumFrameworkDesign.tests.ErrorValidationsTest#LoginErrorValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">SeleniumFrameworkDesign.tests.ErrorValidationsTest#ProductErrorValidation</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Submit Order</h2><h3 id="m2">SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder#orderHistoryTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder#submitOrder</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=Raagav@747, product=ZARA COAT 3, email=BlackICE@gmail.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder#submitOrder</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>{password=Raagav@727, product=ADIDAS ORIGINAL, email=Sellares27@gmail.com}</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
