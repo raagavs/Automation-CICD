@@ -28,13 +28,14 @@ import SeleniumFrameworkDesign.PageObjects.LandingPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
-
-    public WebDriver driver;
+    // Using ThreadLocal to isolate drivers per thread
+    public static ThreadLocal<WebDriver> tDriver = new ThreadLocal<WebDriver>();
+    // public WebDriver driver;
     public LandingPage lp1;
 
     @BeforeMethod(alwaysRun = true)
     public LandingPage launchApplication() throws IOException {
-        driver = initializeDriver();
+        WebDriver driver = initializeDriver();// This now sets the ThreadLocal
         lp1 = new LandingPage(driver);
         lp1.goTo();
         return lp1;
@@ -51,6 +52,7 @@ public class BaseTest {
         String browserName = System.getProperty("browser") != null ? System.getProperty("browser")
                 : prop.getProperty("browser");
 
+        WebDriver driverInstance = null;
         if (browserName.contains("chrome")) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
@@ -63,21 +65,27 @@ public class BaseTest {
                 options.addArguments("--disable-dev-shm-usage");
             }
             // Initialize the driver ONLY ONCE with the options
-            driver = new ChromeDriver(options);
+            driverInstance = new ChromeDriver(options);
             if (browserName.contains("headless")) {
-                driver.manage().window().setSize(new Dimension(1920, 1080));
+                driverInstance.manage().window().setSize(new Dimension(1920, 1080));
             }
 
         } else if (browserName.equalsIgnoreCase("edge")) {
             WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
+            driverInstance = new EdgeDriver();
         } else if (browserName.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
+            driverInstance = new FirefoxDriver();
         }
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        tDriver.set(driverInstance);
+
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         // driver.manage().window().maximize();
-        return driver;
+        return tDriver.get();
+    }
+
+    public WebDriver getDriver() {
+        return tDriver.get();
     }
 
     public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
@@ -106,9 +114,10 @@ public class BaseTest {
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-
+        if (getDriver() != null) {
+            getDriver().quit();
+            // This is the "Garbage Collection" for your thread
+            tDriver.remove();
         }
 
     }
