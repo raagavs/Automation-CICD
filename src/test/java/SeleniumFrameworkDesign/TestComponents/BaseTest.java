@@ -28,7 +28,7 @@ import SeleniumFrameworkDesign.PageObjects.LandingPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
-    // Using ThreadLocal to isolate drivers per thread
+    // Using ThreadLocal to isolate drivers per thread - TELGHST Wndow
     public static ThreadLocal<WebDriver> tDriver = new ThreadLocal<WebDriver>();
     // public WebDriver driver;
     public LandingPage lp1;
