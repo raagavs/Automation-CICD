@@ -40,11 +40,12 @@ public class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public LandingPage launchApplication() throws IOException {
-        WebDriver driver = initializeDriver();// This now sets the ThreadLocal
-        LandingPage lp1 = new LandingPage(driver);
+        // WebDriver driver = initializeDriver();// This now sets the ThreadLocal
+        // LandingPage lp1 = new LandingPage(driver);
+        LandingPage lp1 = new LandingPage(initializeDriver());// cleaner approach
         tlp.set(lp1);
-        getLandingPage().goTo();
-        return getLandingPage();
+        lp1.goTo();
+        return lp1;
     }
 
     public WebDriver getDriver() {
