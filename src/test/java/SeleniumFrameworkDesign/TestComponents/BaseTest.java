@@ -31,14 +31,24 @@ public class BaseTest {
     // Using ThreadLocal to isolate drivers per thread - TELGHST Wndow
     public static ThreadLocal<WebDriver> tDriver = new ThreadLocal<WebDriver>();
     // public WebDriver driver;
-    public LandingPage lp1;
+    // public LandingPage lp1;
+    public static ThreadLocal<LandingPage> tlp = new ThreadLocal<>();
+
+    public LandingPage getLandingPage() {
+        return tlp.get();
+    }
 
     @BeforeMethod(alwaysRun = true)
     public LandingPage launchApplication() throws IOException {
         WebDriver driver = initializeDriver();// This now sets the ThreadLocal
-        lp1 = new LandingPage(driver);
-        lp1.goTo();
-        return lp1;
+        LandingPage lp1 = new LandingPage(driver);
+        tlp.set(lp1);
+        getLandingPage().goTo();
+        return getLandingPage();
+    }
+
+    public WebDriver getDriver() {
+        return tDriver.get();
     }
 
     public WebDriver initializeDriver() throws IOException {
@@ -84,10 +94,6 @@ public class BaseTest {
         return tDriver.get();
     }
 
-    public WebDriver getDriver() {
-        return tDriver.get();
-    }
-
     public String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
@@ -118,6 +124,8 @@ public class BaseTest {
             getDriver().quit();
             // This is the "Garbage Collection" for your thread
             tDriver.remove();
+            tlp.remove();
+
         }
 
     }

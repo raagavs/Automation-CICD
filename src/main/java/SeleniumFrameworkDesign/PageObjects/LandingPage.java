@@ -16,8 +16,8 @@ public class LandingPage extends AbstractComponent {
     WebDriver driver;// driver belong to local class
 
     public LandingPage(WebDriver driver) {
-        
-	// Driver Initialization
+
+        // Driver Initialization
         super(driver);
         this.driver = driver;// assigning driver from test to local
         PageFactory.initElements(driver, this);// Takes driver + current class reference (this).

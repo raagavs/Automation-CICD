@@ -21,7 +21,7 @@ public class StandaAloneTest2SubmitOrder extends BaseTest {
     @Test(dataProvider = "getData", groups = "purchase")
     public void submitOrder(HashMap<String, String> input) throws IOException, InterruptedException {
 
-        ProductCatalogue pc1 = lp1.loginApplication(input.get("email"), input.get("password"));
+        ProductCatalogue pc1 = getLandingPage().loginApplication(input.get("email"), input.get("password"));
         pc1.getProductList();
         pc1.addProductToCart(input.get("product"));
         CartPage cp = pc1.goToCart();
@@ -38,7 +38,7 @@ public class StandaAloneTest2SubmitOrder extends BaseTest {
 
     @Test(dependsOnMethods = { "submitOrder" })
     public void orderHistoryTest() {
-        ProductCatalogue pc1 = lp1.loginApplication("BlackICE@gmail.com", "Raagav@747");
+        ProductCatalogue pc1 = getLandingPage().loginApplication("BlackICE@gmail.com", "Raagav@747");
         OrderPage op = pc1.goToOrdersPage();
         Assert.assertTrue(op.VerifyOrderDisplay(productName));
     }
