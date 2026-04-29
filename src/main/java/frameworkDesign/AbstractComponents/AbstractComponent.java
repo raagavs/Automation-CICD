@@ -1,6 +1,7 @@
 package frameworkDesign.AbstractComponents;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -44,6 +45,12 @@ public class AbstractComponent {
     {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(findBy));
+
+    }
+
+    public void waitForWebelementsToAppear(List<WebElement> elements) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOfAllElements(elements));
 
     }
 

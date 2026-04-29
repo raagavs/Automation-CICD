@@ -34,10 +34,10 @@ public class CartPage extends AbstractComponent {
     // driver.findElement(By.cssSelector(".subtotal button")).click();
 
     public Boolean VerifyProductDisplay(String productName) {
-
+        waitForWebelementsToAppear(productTitles);
         Boolean match = productTitles.stream().anyMatch(cartProduct -> cartProduct.getText().equals(productName));
-	System.out.println(match);        
-	return match;
+        System.out.println(match);
+        return match;
     }
 
     public CheckoutPage goToCheckout() {
