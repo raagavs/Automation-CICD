@@ -29,13 +29,6 @@ public class CartPage extends AbstractComponent {
     @FindBy(css = ".subtotal button")
     WebElement checkoutEle;
 
-    // List<WebElement> cartProducts =
-    // driver.findElements(By.cssSelector(".cartSection h3"));
-    // Boolean match = cartProducts.stream().anyMatch(cartProduct ->
-    // cartProduct.getText().equals(productName));
-    // Assert.assertTrue(match);
-    // driver.findElement(By.cssSelector(".subtotal button")).click();
-
     public Boolean VerifyProductDisplay(String productName) {
         visibilityOfElementsLocated(productTitlesBy);
         List<WebElement> productTitles = driver.findElements(productTitlesBy);
