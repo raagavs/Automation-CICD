@@ -34,7 +34,6 @@ public class CartPage extends AbstractComponent {
         List<WebElement> productTitles = driver.findElements(productTitlesBy);
         Boolean match = productTitles.stream()
                 .anyMatch(cartProduct -> cartProduct.getText().trim().equalsIgnoreCase(productName.trim()));
-        productTitles.forEach(p -> System.out.println("UI Product: " + p.getText()));
         return match;
     }
 
