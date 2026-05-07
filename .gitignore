@@ -1,0 +1,15 @@
+# Extent Reports and Screenshots
+Testing/
+reports/
+
+# Maven and TestNG outputs
+target/
+test-output/
+
+# Eclipse / IDE specific files
+.settings/
+.classpath
+.project
+
+# Compiled files
+*.class
