@@ -2,6 +2,7 @@ package SeleniumFrameworkDesign.PageObjects;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,24 +21,21 @@ public class CartPage extends AbstractComponent {
 
     }
 
+    By productTitlesBy = By.cssSelector(".cartSection h3");
+
     @FindBy(css = ".cartSection h3")
     List<WebElement> productTitles;
 
     @FindBy(css = ".subtotal button")
     WebElement checkoutEle;
 
-    // List<WebElement> cartProducts =
-    // driver.findElements(By.cssSelector(".cartSection h3"));
-    // Boolean match = cartProducts.stream().anyMatch(cartProduct ->
-    // cartProduct.getText().equals(productName));
-    // Assert.assertTrue(match);
-    // driver.findElement(By.cssSelector(".subtotal button")).click();
-
     public Boolean VerifyProductDisplay(String productName) {
-
-        Boolean match = productTitles.stream().anyMatch(cartProduct -> cartProduct.getText().equals(productName));
-	System.out.println(match);        
-	return match;
+        visibilityOfElementsLocated(productTitlesBy);
+        List<WebElement> productTitles = driver.findElements(productTitlesBy);
+        Boolean match = productTitles.stream()
+                .anyMatch(cartProduct -> cartProduct.getText().trim().equalsIgnoreCase(productName.trim()));
+        productTitles.forEach(p -> System.out.println("UI Product: " + p.getText()));
+        return match;
     }
 
     public CheckoutPage goToCheckout() {

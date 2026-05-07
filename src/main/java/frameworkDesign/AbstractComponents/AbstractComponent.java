@@ -1,7 +1,6 @@
 package frameworkDesign.AbstractComponents;
 
 import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -26,6 +25,8 @@ public class AbstractComponent {
     @FindBy(id = "login") // Descriptive name: submitButton
     WebElement submit;
 
+    By productTtitlesBy = By.cssSelector(".cartSection h3");
+
     public AbstractComponent(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -47,12 +48,18 @@ public class AbstractComponent {
 
     }
 
-    public void waitForElementToDisappear(WebElement ele) throws InterruptedException
+    public void visibilityOfElementsLocated(By findBy) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(findBy));
+
+    }
+
+    public void waitForElementToDisappear(By ele) throws InterruptedException
 
     {
         // Thread.sleep(1000);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.invisibilityOf(ele));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(ele));
 
     }
 

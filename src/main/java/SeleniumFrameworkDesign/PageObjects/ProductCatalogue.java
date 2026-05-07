@@ -27,7 +27,9 @@ public class ProductCatalogue extends AbstractComponent {
     List<WebElement> products;
 
     @FindBy(css = ".ng-animating") // WebElement spinner - wait
-    WebElement spinner;
+    WebElement spinner1;
+
+    By spinner = By.cssSelector(".ng-animating");
 
     By productsBy = By.cssSelector(".col-lg-4");
     By addToCart = By.cssSelector(".card-body button:last-of-type");
@@ -54,7 +56,8 @@ public class ProductCatalogue extends AbstractComponent {
         js.executeScript("arguments[0].scrollIntoView({block: 'center'});", addToCartButton);
 
         // 2. Wait for it to be clickable after scroll
-        waitForElementToAppear(addToCart);
+        waitForElementToBeClickable(addToCartButton);
+        // waitForElementToAppear(addToCart);
 
         try {
             addToCartButton.click();
@@ -65,7 +68,7 @@ public class ProductCatalogue extends AbstractComponent {
 
         waitForElementToAppear(toast);
         waitForElementToDisappear(spinner);
-        Thread.sleep(1000);
+        System.out.println("Clicked Add to Cart for: " + productName);
 
     }
 }
