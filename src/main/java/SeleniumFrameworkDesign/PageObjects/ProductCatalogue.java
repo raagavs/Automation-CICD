@@ -23,10 +23,10 @@ public class ProductCatalogue extends AbstractComponent {
 
     }
 
-    @FindBy(css = ".col-lg-4") // WebElement Products
+    @FindBy(css = ".col-lg-4")
     List<WebElement> products;
 
-    @FindBy(css = ".ng-animating") // WebElement spinner - wait
+    @FindBy(css = ".ng-animating")
     WebElement spinner1;
 
     By spinner = By.cssSelector(".ng-animating");
@@ -35,7 +35,7 @@ public class ProductCatalogue extends AbstractComponent {
     By addToCart = By.cssSelector(".card-body button:last-of-type");
     By toast = By.id("toast-container");
 
-    public List<WebElement> getProductList() {// We are getting the productsList here
+    public List<WebElement> getProductList() {
         waitForElementToAppear(productsBy);
         return products;
     }
@@ -51,24 +51,18 @@ public class ProductCatalogue extends AbstractComponent {
         WebElement prod = getProductByName(productName);
         WebElement addToCartButton = prod.findElement(addToCart);
 
-        // 1. Scroll the element into view so it's not at a negative coordinate
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView({block: 'center'});", addToCartButton);
 
-        // 2. Wait for it to be clickable after scroll
         waitForElementToBeClickable(addToCartButton);
-        // waitForElementToAppear(addToCart);
 
         try {
             addToCartButton.click();
         } catch (Exception e) {
-            // 3. Backup: If something is overlapping, force the click
             js.executeScript("arguments[0].click();", addToCartButton);
         }
 
         waitForElementToAppear(toast);
         waitForElementToDisappear(spinner);
-        System.out.println("Clicked Add to Cart for: " + productName);
-
     }
 }

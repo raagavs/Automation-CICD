@@ -22,7 +22,6 @@ public class ErrorValidationsTest extends BaseTest {
     @Test
     public void ProductErrorValidation() throws IOException, InterruptedException {
         String productName = "ZARA COAT 3";
-        // Directly use the getter which pulls the object for THIS thread
         ProductCatalogue pc1 = getLandingPage().loginApplication("BlackICE@gmail.com", "Raagav@747");
         pc1.getProductList();
         pc1.addProductToCart(productName);

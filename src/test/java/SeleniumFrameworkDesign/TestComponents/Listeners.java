@@ -21,12 +21,12 @@ public class Listeners extends BaseTest implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
         test = extent.createTest(result.getMethod().getMethodName());
-        extentTest.set(test);// Unique Thread ID created(ErrorValidationTest) and --->> Assigned to the Test
+        extentTest.set(test);
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        extentTest.get().log(Status.PASS, "Test Passed");// Fetches Test object linked to the ThreeadLoacl Unique id
+        extentTest.get().log(Status.PASS, "Test Passed");
     }
 
     @Override
@@ -35,18 +35,16 @@ public class Listeners extends BaseTest implements ITestListener {
         extentTest.get().fail(result.getThrowable());
         WebDriver driver = null;
         String filePath = null;
-        
+
         try {
             driver = BaseTest.tDriver.get();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        
         try {
             filePath = getScreenshot(result.getMethod().getMethodName(), driver);
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         extentTest.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());

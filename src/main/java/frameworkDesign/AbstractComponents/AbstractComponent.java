@@ -22,7 +22,7 @@ public class AbstractComponent {
     @FindBy(css = "[routerlink*='myorders']")
     WebElement orderHeader;
 
-    @FindBy(id = "login") // Descriptive name: submitButton
+    @FindBy(id = "login")
     WebElement submit;
 
     By productTtitlesBy = By.cssSelector(".cartSection h3");
@@ -83,13 +83,9 @@ public class AbstractComponent {
     }
 
     public OrderPage goToOrdersPage() {
-        // 1. Ensure the toast/spinner from the previous action is GONE
-        // waitForElementToDisappear(spinner);
-
         try {
             orderHeader.click();
         } catch (Exception e) {
-            // 2. If the Toast is still lingering, JS will bypass the overlay
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].click();", orderHeader);
         }

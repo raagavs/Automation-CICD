@@ -15,7 +15,7 @@ import SeleniumFrameworkDesign.PageObjects.OrderPage;
 import SeleniumFrameworkDesign.PageObjects.ProductCatalogue;
 import SeleniumFrameworkDesign.TestComponents.BaseTest;
 
-public class StandaAloneTest2SubmitOrder extends BaseTest {
+public class SubmitOrder extends BaseTest {
     String productName = "ZARA COAT 3";
 
     @Test(dataProvider = "getData", groups = "purchase")
@@ -48,16 +48,6 @@ public class StandaAloneTest2SubmitOrder extends BaseTest {
 
         List<HashMap<String, String>> data = getJsonDataToMap(
                 System.getProperty("user.dir") + "\\src\\test\\java\\frameworkDesign\\data\\PurchaseOrder.json");
-        return new Object[][] { { data.get(0) }, { data.get(1) } };// List object.get data
+        return new Object[][] { { data.get(0) }, { data.get(1) } };
     }
 }
-
-//HashMap<String, String> map = new HashMap<>();
-//map.put("email", "BlackICE@gmail.com");
-//map.put("password", "Raagav@747");
-//map.put("product", "ZARA COAT 3");
-//
-//HashMap<String, String> map1 = new HashMap<>();
-//map1.put("email", "Sellares27@gmail.com");
-//map1.put("password", "Raagav@727");
-//map1.put("product", "ADIDAS ORIGINAL");

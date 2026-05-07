@@ -1,6 +1,3 @@
-//Note- pageObjects should not hold any data, this is important
-//PageObjects are only for Elements and Actions.
-
 package SeleniumFrameworkDesign.PageObjects;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,30 +10,25 @@ import frameworkDesign.AbstractComponents.AbstractComponent;
 
 public class LandingPage extends AbstractComponent {
 
-    WebDriver driver;// driver belong to local class
+    WebDriver driver;
 
     public LandingPage(WebDriver driver) {
 
-        // Driver Initialization
         super(driver);
-        this.driver = driver;// assigning driver from test to local
-        PageFactory.initElements(driver, this);// Takes driver + current class reference (this).
-        // you are settingup driver here
-        // Triggers construction for all annotated elements on object creation.
-
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
     }
 
-    // PageFactory
-    @FindBy(id = "userEmail") // WebElement userEmail = driver.findElement(By.id(""));
-    WebElement userEMail; // at runtime it will be converted like above comment
+    @FindBy(id = "userEmail")
+    WebElement userEMail;
 
-    @FindBy(id = "userPassword") // Still ID locator
+    @FindBy(id = "userPassword")
     WebElement passwordEle;
 
-    @FindBy(id = "login") // Descriptive name: submitButton
+    @FindBy(id = "login")
     WebElement submit;
 
-    @FindBy(css = "[class*='flyInOut']") // Descriptive name: submitButton
+    @FindBy(css = "[class*='flyInOut']")
     WebElement errMessage;
 
     public ProductCatalogue loginApplication(String email, String password) {
@@ -46,7 +38,6 @@ public class LandingPage extends AbstractComponent {
         try {
             submit.click();
         } catch (Exception e) {
-            // Backup for Headless/Jenkins intercepts
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].click();", submit);
         }

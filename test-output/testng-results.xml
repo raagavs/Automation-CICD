@@ -1,51 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-28T19:38:14 IST" name="Suite" finished-at="2026-04-28T19:38:46 IST" duration-ms="31721">
+  <suite started-at="2026-05-07T18:32:46 IST" name="Default suite" finished-at="2026-05-07T18:33:20 IST" duration-ms="34434">
     <groups>
-      <group name="ErrorHandling">
-        <method signature="ErrorValidationsTest.LoginErrorValidation()[pri:0, instance:SeleniumFrameworkDesign.tests.ErrorValidationsTest@2a7ed1f]" name="LoginErrorValidation" class="SeleniumFrameworkDesign.tests.ErrorValidationsTest"/>
-      </group> <!-- ErrorHandling -->
       <group name="purchase">
-        <method signature="StandaAloneTest2SubmitOrder.submitOrder(java.util.HashMap)[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@6bb4dd34]" name="submitOrder" class="SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder"/>
+        <method signature="StandaAloneTest2SubmitOrder.submitOrder(java.util.HashMap)[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@385c9627]" name="submitOrder" class="SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder"/>
       </group> <!-- purchase -->
     </groups>
-    <test started-at="2026-04-28T19:38:14 IST" name="Error Validations" finished-at="2026-04-28T19:38:37 IST" duration-ms="23195">
-      <class name="SeleniumFrameworkDesign.tests.ErrorValidationsTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFrameworkDesign.tests.ErrorValidationsTest@2a7ed1f]" started-at="2026-04-28T19:38:14 IST" name="launchApplication" finished-at="2026-04-28T19:38:17 IST" duration-ms="2926" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="LoginErrorValidation()[pri:0, instance:SeleniumFrameworkDesign.tests.ErrorValidationsTest@2a7ed1f]" started-at="2026-04-28T19:38:17 IST" name="LoginErrorValidation" finished-at="2026-04-28T19:38:18 IST" duration-ms="531" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginErrorValidation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.tests.ErrorValidationsTest@2a7ed1f]" started-at="2026-04-28T19:38:18 IST" name="tearDown" finished-at="2026-04-28T19:38:18 IST" duration-ms="129" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFrameworkDesign.tests.ErrorValidationsTest@2a7ed1f]" started-at="2026-04-28T19:38:18 IST" name="launchApplication" finished-at="2026-04-28T19:38:21 IST" duration-ms="3045" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="ProductErrorValidation()[pri:0, instance:SeleniumFrameworkDesign.tests.ErrorValidationsTest@2a7ed1f]" started-at="2026-04-28T19:38:21 IST" name="ProductErrorValidation" finished-at="2026-04-28T19:38:37 IST" duration-ms="16380" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ProductErrorValidation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.tests.ErrorValidationsTest@2a7ed1f]" started-at="2026-04-28T19:38:37 IST" name="tearDown" finished-at="2026-04-28T19:38:37 IST" duration-ms="122" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumFrameworkDesign.tests.ErrorValidationsTest -->
-    </test> <!-- Error Validations -->
-    <test started-at="2026-04-28T19:38:14 IST" name="Submit Order" finished-at="2026-04-28T19:38:46 IST" duration-ms="31721">
+    <test started-at="2026-05-07T18:32:46 IST" name="Default test" finished-at="2026-05-07T18:33:20 IST" duration-ms="34434">
       <class name="SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@6bb4dd34]" started-at="2026-04-28T19:38:14 IST" name="launchApplication" finished-at="2026-04-28T19:38:18 IST" duration-ms="4023" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@385c9627]" started-at="2026-05-07T18:32:47 IST" name="launchApplication" finished-at="2026-05-07T18:32:51 IST" duration-ms="4339" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@6bb4dd34]" started-at="2026-04-28T19:38:18 IST" name="submitOrder" data-provider="getData" finished-at="2026-04-28T19:38:23 IST" duration-ms="4429" status="PASS">
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@385c9627]" started-at="2026-05-07T18:32:51 IST" name="submitOrder" data-provider="getData" finished-at="2026-05-07T18:32:58 IST" duration-ms="7192" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -56,15 +25,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@6bb4dd34]" started-at="2026-04-28T19:38:23 IST" name="tearDown" finished-at="2026-04-28T19:38:23 IST" duration-ms="173" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@385c9627]" started-at="2026-05-07T18:32:58 IST" name="tearDown" finished-at="2026-05-07T18:32:59 IST" duration-ms="539" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@6bb4dd34]" started-at="2026-04-28T19:38:23 IST" name="launchApplication" finished-at="2026-04-28T19:38:26 IST" duration-ms="2473" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@385c9627]" started-at="2026-05-07T18:32:59 IST" name="launchApplication" finished-at="2026-05-07T18:33:02 IST" duration-ms="2932" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@6bb4dd34]" started-at="2026-04-28T19:38:26 IST" name="submitOrder" data-provider="getData" finished-at="2026-04-28T19:38:41 IST" duration-ms="15593" status="PASS">
+        <test-method signature="submitOrder(java.util.HashMap)[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@385c9627]" started-at="2026-05-07T18:33:02 IST" name="submitOrder" data-provider="getData" finished-at="2026-05-07T18:33:16 IST" duration-ms="14556" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -75,23 +44,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@6bb4dd34]" started-at="2026-04-28T19:38:41 IST" name="tearDown" finished-at="2026-04-28T19:38:41 IST" duration-ms="133" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@385c9627]" started-at="2026-05-07T18:33:16 IST" name="tearDown" finished-at="2026-05-07T18:33:16 IST" duration-ms="158" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@6bb4dd34]" started-at="2026-04-28T19:38:41 IST" name="launchApplication" finished-at="2026-04-28T19:38:45 IST" duration-ms="3592" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@385c9627]" started-at="2026-05-07T18:33:16 IST" name="launchApplication" finished-at="2026-05-07T18:33:20 IST" duration-ms="3235" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="orderHistoryTest()[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@6bb4dd34]" started-at="2026-04-28T19:38:45 IST" name="orderHistoryTest" finished-at="2026-04-28T19:38:46 IST" depends-on-methods="SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder.submitOrder" duration-ms="936" status="PASS">
+        <test-method signature="orderHistoryTest()[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@385c9627]" started-at="2026-05-07T18:33:20 IST" name="orderHistoryTest" finished-at="2026-05-07T18:33:20 IST" depends-on-methods="SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder.submitOrder" duration-ms="809" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- orderHistoryTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@6bb4dd34]" started-at="2026-04-28T19:38:46 IST" name="tearDown" finished-at="2026-04-28T19:38:46 IST" duration-ms="83" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder@385c9627]" started-at="2026-05-07T18:33:20 IST" name="tearDown" finished-at="2026-05-07T18:33:20 IST" duration-ms="119" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder -->
-    </test> <!-- Submit Order -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

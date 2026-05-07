@@ -25,9 +25,4 @@ public class ConfirmationPage extends AbstractComponent {
 
     }
 
-    // String confirmMessage =
-    // driver.findElement(By.cssSelector(".hero-primary")).getText();
-    // Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE
-    // ORDER."));
-
 }

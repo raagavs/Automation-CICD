@@ -9,7 +9,7 @@
 <test thread-count="5" name="Submit Order">
 		<classes>
 			<class
-				name="SeleniumFrameworkDesign.tests.StandaAloneTest2SubmitOrder" />
+				name="SeleniumFrameworkDesign.tests.SubmitOrder" />
 		</classes>
 	</test>
 <test thread-count="5" name="Error Validations">
