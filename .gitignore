@@ -16,3 +16,6 @@ test-output/
 
 # VSCode specific files
 .vscode
+
+#logs
+*.log
