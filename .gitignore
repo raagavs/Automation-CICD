@@ -15,4 +15,4 @@ test-output/
 *.class
 
 # VSCode specific files
-.vscode/
+.vscode
