@@ -13,3 +13,6 @@ test-output/
 
 # Compiled files
 *.class
+
+# VSCode specific files
+.vscode/
