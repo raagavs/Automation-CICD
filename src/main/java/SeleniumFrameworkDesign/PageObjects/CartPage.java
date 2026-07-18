@@ -1,7 +1,5 @@
 package SeleniumFrameworkDesign.PageObjects;
-
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,7 +16,6 @@ public class CartPage extends AbstractComponent {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
-
     }
 
     By productTitlesBy = By.cssSelector(".cartSection h3");
